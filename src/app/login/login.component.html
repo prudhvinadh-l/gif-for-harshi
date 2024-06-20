@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white">Login</div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label for="email" style="
+                margin-right: 10%;
+                font-size: small;">Email:</label>
+                <input type="email" id="email" formControlName="email" class="form-control" required>
+                <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
+                  <div *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
+                    Email is required.
+                  </div>
+                  <div *ngIf="loginForm.get('email')?.hasError('email') && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-danger">
+                    Email must be a valid email address.
+                  </div>
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="password" style="
+                margin-right: 3%;
+                font-size: small;">Password:</label>
+                <input type="password" id="password" formControlName="password" class="form-control" required>
+                <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-danger">
+                  <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-danger">
+                    Password is required.
+                  </div>
+                </div>
+              </div>
+            
+              <div class="form-group form-check">
+                <input type="checkbox" id="rememberMe" formControlName="rememberMe" class="form-check-input">
+                <label class="form-check-label" for="rememberMe" style="
+                font-size: small;">Remember me ❤️ 😏</label>
+              </div>
+            
+              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
