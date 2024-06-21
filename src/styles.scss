@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
   
   .page {
-    width: 423.5px;
-    height: 654.5px;
+    width: 443.5px;
+    height: 616.5px;
+    zoom: 45%;
     background: #84ca14;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 35px;
+    right: -12px;
     transition: transform 1s;
   }
   
@@ -654,38 +655,19 @@
     position: relative;
     top: 3%;
   }
-  .instruction {
-    left: calc(50% - 150px);
-    font-size: 26px;
-    font-family: "EB Garamond", serif;
-    color: rgba(22, 199, 2, 0.998);
-    box-sizing: border-box;
-    border-radius: 2px solid red;
-    padding: 10px 15px;
-    margin-top: 10%;
-  }
-  .instruction{
-    position: relative;
-    top: auto;
-    left: 61%;
-  }
-
   .book {
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .book {
-    width: 930px;
-    height: 654.5px;
+    height: 376.5px;
     transform: translate(-50%, -50%) rotatex(10deg) rotatey(-10deg);
     transform-style: preserve-3d;
   }
   .book{
     position: relative;
-    left: 48%;
     width: 95%;
     
     /* transform: translate(0%, 0%) rotatex(10deg) rotatey(-10deg);
@@ -693,9 +675,9 @@
   }
   
   .motive {
-    margin-left: 10%;
-    padding-top: 20%;
-    color: white;
+    margin: 8px 28% 0px 7px;
+    font-size: x-small;
+    color: rgb(39, 57, 219);
     font-family: Arial, Helvetica, sans-serif;
   }
   .motive span {
@@ -710,17 +692,14 @@
       position: relative;
       margin: 4%;
       padding-top: 2%;
-      width: 100vw;
   
     }
     .instruction{
       position: relative;
       top: auto;
-      left: 61%;
     }
     .book{
       position: relative;
-      left: 48%;
       width: 95%;
       
       /* transform: translate(0%, 0%) rotatex(10deg) rotatey(-10deg);

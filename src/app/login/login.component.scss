@@ -21,8 +21,9 @@
     font-weight: bold;
     color: #fff;
     background-color: #007bff;
-    border-radius: 8px 8px 0 0;
+    border-radius: 8px 8px 8px 8px;
     padding: 10px 0;
+    margin-bottom: 13px;
   }
   
   .form-group {
@@ -37,7 +38,7 @@
   
   .btn-primary {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
     background-color: #007bff;
     border: none;
     color: #fff;
@@ -52,21 +53,35 @@
     }
   }
 
-  @media (max-width: 768px) { // This is typically the width of a tablet. Adjust as needed.
+  @media (max-width: 768px) {
     .text-danger {
-      font-size: 12px; // Make the font size smaller for smaller screens.
-      margin-bottom: 5px; // Reduce the space below each danger text.
+      font-size: 10px; 
+      margin-bottom: 5px; 
+      color: red;
     }
   
     .form-control {
-      margin-top: 5px; // Reduce the space above each input field.
+      margin-top: 5px; 
     }
   }
   
-  @media (min-width: 769px) and (max-width: 1024px) { // This range typically covers laptop screens. Adjust as needed.
+  @media (min-width: 769px) and (max-width: 1024px) {
     .text-danger {
-      font-size: 14px; // Make the font size slightly larger for larger screens.
-      margin-bottom: 10px; // Increase the space below each danger text.
+      font-size: 12px; 
+      margin-bottom: 10px; 
+      color: red;
+    }
+  
+    .form-control {
+      margin-top: 10px; 
+    }
+  }
+
+  @media (min-width: 1024px) { 
+    .text-danger {
+      font-size: 12px; 
+      margin-bottom: 10px; 
+      color: red;
     }
   
     .form-control {

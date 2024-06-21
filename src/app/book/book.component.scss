@@ -45,10 +45,14 @@
     text-decoration: wavy;
   }
   p {
-    position: absolute;
     color: rgb(8, 0, 223);
     top: 56%;
     font-family:Arial, Helvetica, sans-serif;
-    font-weight: 800;
-    display: flex;
   }
+  .book-page {
+    display: flex;
+    height: 63vh;
+    background: #13bd354e;
+    color: rgb(147, 56, 56);
+  }
+  

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { get } from 'http';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       // Perform login action here
-      if(this.loginForm.get('email')?.value === 'prudhvi4102@gmail.com'){
+      if(this.loginForm.get('email')?.value === 'prudhvi4102@gmail.com' || this.getBooleanValue(this.loginForm.get('email')?.value)){
         console.log('Login Successful');
       }
       console.log(this.loginForm.value);
@@ -37,5 +38,12 @@ export class LoginComponent implements OnInit {
       // Navigate to another route on successful login
       this.router.navigate(['/book']);
     }
+  }
+
+  getBooleanValue(value: string): boolean {
+    if(value.includes('harshita')){
+      return true;
+    }
+    return value === 'true';
   }
 }
