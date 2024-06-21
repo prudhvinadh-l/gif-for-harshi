@@ -5,9 +5,9 @@ import { BookComponent } from './book/book.component';
 
 export const routes: Routes = [
     { path: 'welcome', component: WelcomeComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'book', component: BookComponent },
-    { path: '', redirectTo: '/login', pathMatch: 'full'}
+    { path: '', component: LoginComponent },
+    { path: 'book', component: BookComponent }
+    // { path: '', redirectTo: '/', pathMatch: 'full'}
 ];
 
 export default routes;

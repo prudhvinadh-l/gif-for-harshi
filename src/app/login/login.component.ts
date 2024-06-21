@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { get } from 'http';
+import { CommonServiceService } from '../common-service.service';
 
 @Component({
   selector: 'app-login',
@@ -13,10 +13,12 @@ import { get } from 'http';
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
+  errorMessage: string | undefined;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private service: CommonServiceService
   ) { }
 
   ngOnInit() {
@@ -28,22 +30,29 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errorMessage = '';
     if (this.loginForm.valid) {
       // Perform login action here
-      if(this.loginForm.get('email')?.value === 'prudhvi4102@gmail.com' || this.getBooleanValue(this.loginForm.get('email')?.value)){
+      if(this.getBooleanValue(this.loginForm.get('email')?.value)){
         console.log('Login Successful');
+        this.service.setUserName('Harshita ❤️');
+        this.router.navigate(['/book']);
+      } else {
+        // Set error message for invalid credentials
+        this.errorMessage = 'Only our chotu is allowed to login, you are not our chotu 😜.. please go away';
       }
-      console.log(this.loginForm.value);
-
-      // Navigate to another route on successful login
-      this.router.navigate(['/book']);
+      
+    }else {
+      // Set error message for invalid form
+      this.errorMessage = 'Please fill in the form correctly.';
     }
   }
 
   getBooleanValue(value: string): boolean {
-    if(value.includes('harshita')){
+    value = value.toLowerCase();
+    if(value.includes('harshita') || value.includes('prudhvi')){
       return true;
     }
-    return value === 'true';
+    return false;
   }
 }
