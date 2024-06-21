@@ -24,7 +24,7 @@ export class BookComponent implements OnInit{
   }
 
   showAlert2(): void {
-    alert('No is not an Option👊.. You have to click on Yes Only😏.. Okkkkkkaaaaayyyy.. No Option i kept for decoration Only😜');
+    alert('No is not an Option👊.. You have to click on Yes Only😏.. Okkkkkkaaaaayyyy.. This \'No\' Option i kept for decoration Only😜');
   }
   
   checkCurrentPage(): void {
