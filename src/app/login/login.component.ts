@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
   getBooleanValue(value: string, pass: string): boolean {
     value = value.toLowerCase();
-    if((value.includes('harshita') || value.includes('prudhvi')) && pass === '23-06-2001'){
+    if((value.includes('harshita') || value.includes('prudhvi') || value.includes('harsitha') || value.includes('harshitha') || value.includes('harsita')) && pass === '23-06-2001'){
       return true;
     }
     return false;
