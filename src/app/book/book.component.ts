@@ -30,7 +30,7 @@ export class BookComponent implements OnInit{
   checkCurrentPage(): void {
     const currentPath = this.router.url; 
     if (currentPath === '/book') {
-      this.service.setUserName('Harshita ❤️');
+      this.service.setUserName('Harshita ❤️🎉');
     } else {
       this.service.setUserName('user');
     }

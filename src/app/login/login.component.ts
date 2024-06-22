@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
     this.errorMessage = '';
     if (this.loginForm.valid) {
       // Perform login action here
-      if(this.getBooleanValue(this.loginForm.get('email')?.value)){
+      if(this.getBooleanValue(this.loginForm.get('email')?.value, this.loginForm.get('password')?.value)){
         console.log('Login Successful');
-        this.service.setUserName('Harshita ❤️');
+        this.service.setUserName('Harshita ❤️🎉');
         this.router.navigate(['/book']);
       } else {
         // Set error message for invalid credentials
@@ -48,9 +48,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  getBooleanValue(value: string): boolean {
+  getBooleanValue(value: string, pass: string): boolean {
     value = value.toLowerCase();
-    if(value.includes('harshita') || value.includes('prudhvi')){
+    if((value.includes('harshita') || value.includes('prudhvi')) && pass === '23-06-2001'){
       return true;
     }
     return false;
